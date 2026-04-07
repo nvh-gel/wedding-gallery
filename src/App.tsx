@@ -296,6 +296,12 @@ function HomePage() {
 
 // ─── App (Router) ─────────────────────────────────────────────────────────────
 export default function App() {
+	useEffect(() => {
+		const block = (e: MouseEvent) => e.preventDefault()
+		document.addEventListener('contextmenu', block)
+		return () => document.removeEventListener('contextmenu', block)
+	}, [])
+
 	return (
 		<Routes>
 			<Route path="/" element={<HomePage />} />
