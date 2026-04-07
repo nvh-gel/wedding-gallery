@@ -8,9 +8,9 @@ type Album = { id: string; title: string; subtitle: string; photos: Photo[] }
 // ─── Data ─────────────────────────────────────────────────────────────────────
 const albums: Album[] = [
 	{
-		id: 'ceremony',
-		title: 'The Ceremony',
-		subtitle: 'Where two hearts became one',
+		id: 'church',
+		title: 'In The Church',
+		subtitle: 'May God bless our marriage',
 		photos: [
 			{
 				id: 1,
@@ -51,9 +51,9 @@ const albums: Album[] = [
 		],
 	},
 	{
-		id: 'reception',
-		title: 'The Reception',
-		subtitle: 'Celebrating love with loved ones',
+		id: 'ceremony',
+		title: 'The Ceremony',
+		subtitle: 'Embraced by the love of our close ones',
 		photos: [
 			{
 				id: 7,
@@ -94,9 +94,9 @@ const albums: Album[] = [
 		],
 	},
 	{
-		id: 'portraits',
-		title: 'Portraits',
-		subtitle: 'Timeless memories, captured forever',
+		id: 'partyDL',
+		title: 'The Party',
+		subtitle: 'Celebrate our marriage with family & friends',
 		photos: [
 			{
 				id: 13,
@@ -137,9 +137,52 @@ const albums: Album[] = [
 		],
 	},
 	{
-		id: 'dance',
-		title: 'First Dance',
-		subtitle: 'Dancing into forever',
+		id: 'lovenest',
+		title: 'Our Love Nest',
+		subtitle: 'Moment of joy and happiness in our sweet home',
+		photos: [
+			{
+				id: 19,
+				src: 'https://picsum.photos/seed/wed-dan1/900/600',
+				alt: 'First Dance',
+				caption: 'Our first dance as one',
+			},
+			{
+				id: 20,
+				src: 'https://picsum.photos/seed/wed-dan2/600/900',
+				alt: 'Dance',
+				caption: 'Spinning into forever',
+			},
+			{
+				id: 21,
+				src: 'https://picsum.photos/seed/wed-dan3/900/600',
+				alt: 'Dance',
+				caption: 'Music in our hearts',
+			},
+			{
+				id: 22,
+				src: 'https://picsum.photos/seed/wed-dan4/600/900',
+				alt: 'Dance',
+				caption: 'Every step together',
+			},
+			{
+				id: 23,
+				src: 'https://picsum.photos/seed/wed-dan5/900/600',
+				alt: 'Dance',
+				caption: 'Joy in motion',
+			},
+			{
+				id: 24,
+				src: 'https://picsum.photos/seed/wed-dan6/600/900',
+				alt: 'Dance',
+				caption: 'The night was ours',
+			},
+		],
+	},
+	{
+		id: 'celebration',
+		title: 'Just Married',
+		subtitle: 'Sweet drinks and dances to celebrate our marriage',
 		photos: [
 			{
 				id: 19,
@@ -297,7 +340,13 @@ function Lightbox({
 	const handleTouchEnd = (e: React.TouchEvent) => {
 		if (touchStartX.current === null) return
 		const delta = e.changedTouches[0].clientX - touchStartX.current
-		if (Math.abs(delta) > 48) delta < 0 ? onNext() : onPrev()
+		if (Math.abs(delta) > 48) {
+			if (delta < 0) {
+				onNext()
+			} else {
+				onPrev()
+			}
+		}
 		touchStartX.current = null
 	}
 
@@ -469,13 +518,14 @@ export default function App() {
 				<div className="hero-bg" ref={heroParallaxRef} />
 				<div className="hero-vignette" />
 				<div className="hero-body">
-					<p className="hero-badge">♥ Est. 2024 ♥</p>
+					<p className="hero-badge">♥ 2026 ♥</p>
 					<h1 className="hero-title">
-						<span className="hero-name">Emma</span>
+						<span className="hero-name">Hien</span>
 						<span className="hero-amp">&amp;</span>
-						<span className="hero-name">James</span>
+						<span className="hero-name">Hoan</span>
 					</h1>
-					<p className="hero-date">October 12, 2024 · Paris, France</p>
+					<p className="hero-date">March 28, 2026 · Da Lat</p>
+					<p className="hero-date">April 11, 2026 · Ho Chi Minh City</p>
 					<p className="hero-tagline">
 						A love story, beautifully told in photographs
 					</p>
@@ -520,7 +570,10 @@ export default function App() {
 				<div className="footer-ornament">✦ &nbsp; ✦ &nbsp; ✦</div>
 				<p className="footer-quote">"Two hearts, one love story"</p>
 				<p className="footer-credits">
-					Emma &amp; James · Forever in our hearts
+					From Hien &amp; Hoan
+				</p>
+				<p className="footer-credits">
+					Thank you for being an important part of our journey
 				</p>
 			</footer>
 
