@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48">
+  <!--
+    Two hearts merging — pink (left) + blue (right).
+    They overlap from x≈18 to x≈30; the alpha-blend in that
+    zone creates a soft lavender "merge" colour.
+  -->
+  <!-- Pink heart (warm rose), anchored left -->
+  <path fill="#ff7eb3" opacity="0.88"
+    d="M15 41 C2 31 0 19 0 16 C0 8 4 5 8 5 C11 5 13 8 15 13 C17 8 19 5 22 5 C26 5 30 8 30 16 C30 19 28 31 15 41Z"/>
+  <!-- Blue heart (sky blue), anchored right -->
+  <path fill="#6aacff" opacity="0.88"
+    d="M33 41 C20 31 18 19 18 16 C18 8 22 5 26 5 C29 5 31 8 33 13 C35 8 37 5 40 5 C44 5 48 8 48 16 C48 19 46 31 33 41Z"/>
+</svg>
