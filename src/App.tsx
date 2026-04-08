@@ -121,7 +121,9 @@ export function AlbumSection({
 	album: Album; onPhotoClick: (p: Photo) => void; preview?: boolean
 }) {
 	const ref = useRef<HTMLElement>(null)
-	const displayPhotos = preview ? album.photos.slice(0, 3) : album.photos
+	const displayPhotos = preview
+		? album.photos.filter(p => album.highlightIds.includes(p.id))
+		: album.photos
 
 	useEffect(() => {
 		const targets = ref.current?.querySelectorAll<HTMLElement>('.anim-item') ?? []
